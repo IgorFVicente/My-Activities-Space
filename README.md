@@ -1,3 +1,3 @@
-# My Activities Space
+# My Activities Space - Backend
 
-Repository for Senai "Web Programming" course project.
+Sistema para cadastro de atividades escolares e indicadores de desempenho estudantil

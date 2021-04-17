@@ -1,1 +1,3 @@
-# My-Activities-Space
+# My Activities Space
+
+Repository for Senai "Web Programming" course project.

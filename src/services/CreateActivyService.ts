@@ -3,20 +3,22 @@ import { Activy } from '../models/Activy';
 
 interface ActivyData {
     name: string;
-    activy_date: string;
-    course_unit_id: string;
+    activity_date: string;
+    grade: number;
+    courseUnitId: string;
 }
 
 class CreateActivyService {
     
-    public async execute({name,activy_date,course_unit_id}:ActivyData) {
+    async execute({name, activity_date, grade, courseUnitId}:ActivyData) {
 
         const activyRepository = getRepository(Activy);
 
         const activy = activyRepository.create({
             name,
-            activy_date,
-            course_unit_id
+            activity_date,
+            grade,
+            courseUnitId
         });
 
         await activyRepository.save(activy);
@@ -25,4 +27,4 @@ class CreateActivyService {
     }
 }
 
-export {CreateActivyService}
+export {CreateActivyService};

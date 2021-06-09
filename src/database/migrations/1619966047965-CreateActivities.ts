@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateActivities1619965149774 implements MigrationInterface {
+export class CreateActivities1619966047965 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -18,16 +18,28 @@ export class CreateActivities1619965149774 implements MigrationInterface {
                     },
                     {
                         name:"activity_date",
-                        type:"date"
+                        type:"timestamp"
                     },
                     {
-                        name:"course_unit_id",
+                        name:"grade",
+                        type:"decimal",
+                    },
+                    {
+                        name:"courseUnitId",
                         type:"varchar"
                     },
                     {
                         name:"created_at",
                         type:"timestamp",
                         default: "now()",
+                    }
+                ],
+                foreignKeys: [
+                    {
+                        name:'ActivyCourseUnit',
+                        referencedTableName:'course_units',
+                        referencedColumnNames: ['id'],
+                        columnNames: ['courseUnitId']
                     }
                 ]
             })
